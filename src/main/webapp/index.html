@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script>
+
+        function openWindow(url){
+            var width = 600;
+            var height = 400;
+            var left = (window.screen.width - width) / 2;
+            var top = (window.screen.height - height) / 2;
+            window.open(url,"_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, left="+left+", top="+top+", width="+width+", height="+height+"");
+        }
+
+        $(function(){
+            $("#qq_login").click(function(){
+                openWindow("https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=101469534" +
+                    "&redirect_uri=httq://www.chensidan.com/calback&state=csd243612&scope=get_user_info,list_album,upload_pic,do_like")
+            })
+        })
+    </script>
+    <style type="text/css">
+        #qq_login{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <a id="qq_login">登录</a>
+</body>
+</html>
